@@ -1,0 +1,25 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "bootstrap": "^5.3.7",
+    "bootstrap-icons": "^1.13.1",
+    "gitignore": "^0.7.0",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.19.0",
+    "next": "14.1.4",
+    "nodemailer": "^7.0.10",
+    "package": "^1.0.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hot-toast": "^2.6.0"
+  }
+}
