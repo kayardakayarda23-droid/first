@@ -16,7 +16,7 @@ export default function Navbar() {
             alt="Bako's Logo"
           />
           <Link href="/" className="navbar-brand fw-bolder text-uppercase">
-            Bako`s e n t
+            KYD ENT
           </Link>
         </div>
 
