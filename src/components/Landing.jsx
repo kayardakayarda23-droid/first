@@ -4,26 +4,24 @@ export default function Landing() {
   return (
     <section
       id="mainPage"
-      className="mainPage min-vh-100 d-flex align-items-center bg-dark" // Added bg-dark to ensure white text is visible
+      className="mainPage min-vh-100 d-flex align-items-center bg-dark py-5" 
     >
       <div className="container">
-        <div className="row uper">
+        <div className="row align-items-center">
           {/* Text Content */}
-          <div className="col-lg-6 d-flex flex-column justify-content-center text-start order-2 order-lg-1">
-            {/* Added text-white to all name parts */}
-            <h1 data-aos="fade-up" className="fw-bold text-white">SULAIMAN</h1>
-            <h1 data-aos="fade-up" className="text-white">IBRAHIM</h1>
-            <h1 data-aos="fade-up" className="text-white">KAYARDA</h1>
+          {/* order-1 on mobile ensures your name stays at the top */}
+          <div className="col-lg-6 d-flex flex-column justify-content-center text-center text-lg-start order-1 order-lg-1">
+            <h1 data-aos="fade-up" className="fw-bold text-white display-4">SULAIMAN</h1>
+            <h1 data-aos="fade-up" className="text-white display-4">IBRAHIM</h1>
+            <h1 data-aos="fade-up" className="text-white display-4">KAYARDA</h1>
 
-            <h2 data-aos="fade-up" data-aos-delay="400" className="mt-3 text-light">
+            <h2 data-aos="fade-up" data-aos-delay="400" className="mt-3 text-light fs-5">
               Welcome to my tutorial concept, you are highly welcome.
               We provide tech solutions to the best of our ability.
             </h2>
-            
-            {/* Removed: What is the purpose of your visit? */}
 
-            {/* Action Buttons */}
-            <div data-aos="fade-up" data-aos-delay="600" className="d-flex gap-3 mt-4">
+            {/* Action Buttons - Centered on mobile, left-aligned on desktop */}
+            <div data-aos="fade-up" data-aos-delay="600" className="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 mt-4">
               <a
                 href="/project"
                 className="btn btn-primary btn-get-started d-inline-flex align-items-center px-4 py-2"
@@ -43,17 +41,18 @@ export default function Landing() {
           </div>
 
           {/* Image Content */}
+          {/* order-2 on mobile puts image below the name */}
           <div
-            className="col-lg-6 hero-img order-lg-2 order-1 text-center"
+            className="col-lg-6 hero-img order-2 order-lg-2 text-center mt-5 mt-lg-0"
             data-aos="zoom-out"
             data-aos-delay="200"
           >
-            <h4 className="d-lg-none img-head text-white">Stainless CEO</h4>
+            {/* "Stainless CEO" <h4> has been removed from here */}
             <img
               src="/lom.jpg"
               className="img-fluid shadow-lg rounded border border-secondary"
               alt="Sulaiman Ibrahim Kayarda"
-              style={{ maxHeight: '500px', objectFit: 'cover' }}
+              style={{ maxHeight: '400px', width: 'auto', objectFit: 'cover' }}
             />
           </div>
         </div>
