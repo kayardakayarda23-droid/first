@@ -3,8 +3,11 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    // Changed bg-white to bg-dark and added navbar-dark
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark shadow-sm py-1">
+    // Changed bg-dark to custom style #020c1b and added sticky-top
+    <nav 
+      className="navbar navbar-expand-md navbar-dark shadow-sm py-2 sticky-top" 
+      style={{ backgroundColor: '#020c1b', borderBottom: '1px solid #112240' }}
+    >
       <div className="container">
         {/* Brand Logo & Name */}
         <div className="d-flex align-items-center">
@@ -15,7 +18,7 @@ export default function Navbar() {
             height={35}
             alt="Bako's Logo"
           />
-          <Link href="/" className="navbar-brand fw-bolder text-uppercase">
+          <Link href="/" className="navbar-brand fw-bolder text-uppercase text-primary">
             KYD ENT
           </Link>
         </div>
@@ -40,27 +43,27 @@ export default function Navbar() {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link href="/" className="nav-link fw-bold">
+              <Link href="/" className="nav-link fw-bold text-white">
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/about" className="nav-link fw-bold">
+              <Link href="/about" className="nav-link fw-bold text-white-50">
                 About
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/tutorials" className="nav-link fw-bold">
+              <Link href="/tutorials" className="nav-link fw-bold text-white-50">
                 Tutorials
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/project" className="nav-link fw-bold">
+              <Link href="/project" className="nav-link fw-bold text-white-50">
                 Project
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/contact" className="nav-link fw-bold">
+              <Link href="/contact" className="nav-link fw-bold text-white-50">
                 Contact
               </Link>
             </li>

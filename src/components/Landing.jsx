@@ -4,23 +4,26 @@ export default function Landing() {
   return (
     <section
       id="mainPage"
-      className="mainPage min-vh-100 d-flex align-items-center bg-dark py-5" 
+      className="mainPage min-vh-100 d-flex align-items-center py-5"
+      style={{ backgroundColor: '#020c1b' }} // Updated to Very Dark Navy
     >
       <div className="container">
         <div className="row align-items-center">
           {/* Text Content */}
-          {/* order-1 on mobile ensures your name stays at the top */}
-          <div className="col-lg-6 d-flex flex-column justify-content-center text-center text-lg-start order-1 order-lg-1">
-            <h1 data-aos="fade-up" className="fw-bold text-white display-4">SULAIMAN</h1>
-            <h1 data-aos="fade-up" className="text-white display-4">IBRAHIM</h1>
-            <h1 data-aos="fade-up" className="text-white display-4">KAYARDA</h1>
-
-            <h2 data-aos="fade-up" data-aos-delay="400" className="mt-3 text-light fs-5">
-              Welcome to my tutorial concept, you are highly welcome.
-              We provide tech solutions to the best of our ability.
+          <div className="col-lg-6 d-flex flex-column justify-content-center text-center text-lg-start order-1">
+            <h1 data-aos="fade-up" className="fw-bold text-white display-4 display-md-3">
+              Hi, I'm <span className="text-primary">Sulaiman Ibrahim Kayarda</span>
+            </h1>
+            
+            <h2 data-aos="fade-up" data-aos-delay="400" className="mt-3 text-light fs-4 fw-normal">
+              Software Developer & Tech Editor
             </h2>
 
-            {/* Action Buttons - Centered on mobile, left-aligned on desktop */}
+            <p data-aos="fade-up" data-aos-delay="500" className="text-secondary mt-3 mx-auto mx-lg-0 fs-5" style={{ maxWidth: '550px', lineHeight: '1.6' }}>
+              I build practical digital solutions and create tutorials that make technology easy to understand and apply.
+            </p>
+
+            {/* Action Buttons */}
             <div data-aos="fade-up" data-aos-delay="600" className="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 mt-4">
               <a
                 href="/project"
@@ -34,25 +37,29 @@ export default function Landing() {
                 href="/contact"
                 className="btn btn-outline-light btn-get-started d-inline-flex align-items-center px-4 py-2"
               >
-                Get in Touch
-                <i className="bi bi-person-lines-fill ms-2"></i>
+                Contact Me
+                <i className="bi bi-envelope-fill ms-2"></i>
               </a>
             </div>
           </div>
 
           {/* Image Content */}
-          {/* order-2 on mobile puts image below the name */}
           <div
-            className="col-lg-6 hero-img order-2 order-lg-2 text-center mt-5 mt-lg-0"
+            className="col-lg-6 hero-img order-2 text-center mt-5 mt-lg-0"
             data-aos="zoom-out"
             data-aos-delay="200"
           >
-            {/* "Stainless CEO" <h4> has been removed from here */}
             <img
               src="/lom.jpg"
-              className="img-fluid shadow-lg rounded border border-secondary"
+              className="img-fluid shadow-lg rounded-circle border"
               alt="Sulaiman Ibrahim Kayarda"
-              style={{ maxHeight: '400px', width: 'auto', objectFit: 'cover' }}
+              style={{ 
+                width: '300px', 
+                height: '300px', 
+                objectFit: 'cover',
+                borderWidth: '5px !important',
+                borderColor: '#112240 !important' // Lighter navy border for contrast
+              }}
             />
           </div>
         </div>
