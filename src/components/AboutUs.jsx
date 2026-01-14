@@ -16,7 +16,7 @@ export default function AboutUs() {
               Welcome to my tutorial platform, where learning technology is simple, practical, and beginner-friendly.
             </p> 
             <p>
-              My name is <strong>Ibrahim Sulaiman Kayarda</strong>, a Software Developer and Computer Science 
+              My name is <strong>Sulaiman Ibrahim Kayarda</strong>, a Software Developer and Computer Science 
               student with over 2 years of experience in web development. I have worked on several 
               projects and enjoy building real-world digital solutions. 
             </p>
