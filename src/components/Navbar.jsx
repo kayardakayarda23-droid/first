@@ -1,16 +1,30 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useRef } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
   const isActive = (path) => pathname === path;
+  
+  // Reference to the collapsible div
+  const navCollapseRef = useRef(null);
 
-  // Define colors for easy maintenance
   const royalBlue = "#4169e1";
   const lightGray = "#ccd6f6";
+
+  // Robust function to hide the menu on click
+  const closeNavbar = () => {
+    // Check if we are in the browser and if the menu is actually open (has 'show' class)
+    if (navCollapseRef.current && navCollapseRef.current.classList.contains("show")) {
+      if (window.bootstrap) {
+        const bsCollapse = window.bootstrap.Collapse.getInstance(navCollapseRef.current) || 
+                           new window.bootstrap.Collapse(navCollapseRef.current);
+        bsCollapse.hide();
+      }
+    }
+  };
 
   return (
     <>
@@ -30,32 +44,36 @@ export default function Navbar() {
         style={{ backgroundColor: '#020c1b', borderBottom: '1px solid #112240' }}
       >
         <div className="container">
-          {/* Brand Logo & Name */}
           <div className="d-flex align-items-center">
             <img
               src="/lol.png"
               className="rounded-2 me-2"
               width={45}
               height={35}
-              alt="Bako's Logo"
+              alt="Logo"
             />
             <Link href="/" className="navbar-brand fw-bolder text-uppercase" style={{ color: royalBlue }}>
               KYD ENT
             </Link>
           </div>
 
-          {/* Mobile Toggler */}
           <button
             className="navbar-toggler shadow-none border-secondary"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#main-nav"
+            aria-controls="main-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          {/* Navigation Links */}
-          <div className="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+          <div 
+            className="collapse navbar-collapse justify-content-end align-center" 
+            id="main-nav"
+            ref={navCollapseRef}
+          >
             <ul className="navbar-nav">
               {[
                 { name: "Home", path: "/" },
@@ -68,6 +86,7 @@ export default function Navbar() {
                   <Link 
                     href={link.path} 
                     className={`nav-link fw-bold custom-nav-link ${isActive(link.path) ? "active-link" : ""}`}
+                    onClick={closeNavbar}
                   >
                     {link.name}
                   </Link>
